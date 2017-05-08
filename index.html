@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>House-Loan-Calculator</title>
+  <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+<div class="w">
+  <div class="calculator-wrap">
+    <ul class="calculator-tab">
+        <li class="current">贷款计算器</li>
+        <li>二手房税费计算器</li>
+    </ul>
+    <div class="calculator-content clearfix">
+        <div class="calculator-forms">
+            <div id="loan-wrap" class="calculator-form">
+                <dl class="calculator-form-item" id="loan-type">
+                    <dt>贷款类别：</dt>
+                    <dd><div class="cfi-right">
+                        <label for="loan-type-0"> <input type="radio" name="loan-type" id="loan-type-0" checked>商业贷款</label>
+                        <label for="loan-type-1"> <input type="radio" name="loan-type" id="loan-type-1">公积金贷款</label>
+                        <label for="loan-type-2"> <input type="radio" name="loan-type" id="loan-type-2">组合型贷款</label>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="count-type">
+                    <dt>计算方式：</dt>
+                    <dd><div class="cfi-right">
+                        <label for="count-type-0"> <input type="radio" name="count-type" id="count-type-0" checked>根据面积、单价计算</label>
+                        <label for="count-type-1"> <input type="radio" name="count-type" id="count-type-1">根据贷款总额计算</label>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="univalent">
+                    <dt>单　　价：</dt>
+                    <dd><div class="cfi-right">
+                        <input type="text" placeholder="请输入房屋单价">
+                        <span class="calculator-form-unit">元/平米</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="acreage">
+                    <dt>面　　积：</dt>
+                    <dd><div class="cfi-right">
+                        <input type="text" placeholder="请输入房屋面积">
+                        <span class="calculator-form-unit">平米</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="loan-all">
+                    <dt>贷款总额：</dt>
+                    <dd><div class="cfi-right">
+                        <input type="text" placeholder="请输入贷款总额">
+                        <span class="calculator-form-unit">万元</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="mortgage-ratio">
+                    <dt>按揭成数：</dt>
+                    <dd><div class="cfi-right">
+                        <select name="" id="mr">
+                            <option value="0.9">9成</option>
+                            <option value="0.8">8成</option>
+                            <option value="0.7" selected>7成</option>
+                            <option value="0.6">6成</option>
+                            <option value="0.5">5成</option>
+                            <option value="0.4">4成</option>
+                            <option value="0.3">3成</option>
+                            <option value="0.2">2成</option>
+                        </select>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="loan-business">
+                    <dt>商业贷款：</dt>
+                    <dd><div class="cfi-right">
+                        <input type="text" placeholder="请输入商业贷款金额">
+                        <span class="calculator-form-unit">万元</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="loan-public">
+                    <dt>公积金贷款：</dt>
+                    <dd><div class="cfi-right">
+                        <input type="text" placeholder="请输入公积金贷款金额">
+                        <span class="calculator-form-unit">万元</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="mortgage-years">
+                    <dt>按揭年限：</dt>
+                    <dd><div class="cfi-right">
+                        <select name="">
+                            <option value="1">1年（12期）</option>
+                            <option value="2">2年（24期）</option>
+                            <option value="3">3年（36期）</option>
+                            <option value="4">4年（48期）</option>
+                            <option value="5">5年（60期）</option>
+                            <option value="6">6年（72期）</option>
+                            <option value="7">7年（84期）</option>
+                            <option value="8">8年（96期）</option>
+                            <option value="9">9年（108期）</option>
+                            <option value="10">10年（120期）</option>
+                            <option value="11">11年（132期）</option>
+                            <option value="12">12年（144期）</option>
+                            <option value="13">13年（156期）</option>
+                            <option value="14">14年（168期）</option>
+                            <option value="15">15年（180期）</option>
+                            <option value="16">16年（192期）</option>
+                            <option value="17">17年（204期）</option>
+                            <option value="18">18年（216期）</option>
+                            <option value="19">19年（228期）</option>
+                            <option value="20" selected>20年（240期）</option>
+                            <option value="25">25年（300期）</option>
+                            <option value="30">30年（360期）</option>
+                        </select>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="mortgage-rate">
+                    <dt>商贷利率：</dt>
+                    <dd><div class="cfi-right">
+                        <select name="">
+                            <option value="0.7">7折</option>
+                            <option value="0.75">7.5折</option>
+                            <option value="0.8">8折</option>
+                            <option value="0.85">8.5折</option>
+                            <option value="0.9">9折</option>
+                            <option value="0.95">9.5折</option>
+                            <option value="1" selected>最新基准利率</option>
+                            <option value="1.05">1.05倍</option>
+                            <option value="1.1">1.1倍</option>
+                            <option value="1.2">1.2倍</option>
+                            <option value="1.3">1.3倍</option>
+                        </select>
+                        <input type="text" readonly id="business-ratio">
+                        <span class="calculator-form-unit">%</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="mortgage-public-rate">
+                    <dt>公积金利率：</dt>
+                    <dd><div class="cfi-right">
+                        <select name="">
+                            <option value="0.7">7折</option>
+                            <option value="0.75">7.5折</option>
+                            <option value="0.8">8折</option>
+                            <option value="0.85">8.5折</option>
+                            <option value="0.9">9折</option>
+                            <option value="0.95">9.5折</option>
+                            <option value="1" selected>最新基准利率</option>
+                            <option value="1.05">1.05倍</option>
+                            <option value="1.1">1.1倍</option>
+                            <option value="1.2">1.2倍</option>
+                            <option value="1.3">1.3倍</option>
+                        </select>
+                        <input type="text" readonly id="public-ratio">
+                        <span class="calculator-form-unit">%</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item">
+                    <dt>还款方式：</dt>
+                    <dd><div class="cfi-right">
+                        <label for="loan-mode-1"><input type="radio" id="loan-mode-1" name="loan-mode" checked>等额本息</label>
+                        <label for="loan-mode-2"><input type="radio" id="loan-mode-2" name="loan-mode">等额本金</label>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item">
+                    <dd class="btn-wrap"><div class="cfi-right">
+                        <button class="btn-commit" id="loan-commit">开始计算</button>
+                        <button class="btn-reset" id="loan-reset">重新填写</button>
+                    </div></dd>
+                </dl>
+            </div>
+            <div id="tax-wrap" class="calculator-form" style="padding-top: 42px;">
+                <dl class="calculator-form-item" id="second-house-acreage">
+                    <dt>房屋面积：</dt>
+                    <dd><div class="cfi-right">
+                        <input type="text" placeholder="请输入房屋面积">
+                        <span class="calculator-form-unit">平米</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="second-house-total">
+                    <dt>房屋总价：</dt>
+                    <dd><div class="cfi-right">
+                        <input type="text" placeholder="请输入房屋总价">
+                        <span class="calculator-form-unit">万元</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="second-house-taxation-type">
+                    <dt>计征方式：</dt>
+                    <dd><div class="cfi-right">
+                        <label for="tex-mode-1"><input type="radio" name="tex-mode" id="tex-mode-1" checked>总价</label>
+                        <label for="tex-mode-2"><input type="radio" name="tex-mode" id="tex-mode-2">差价</label>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="second-house-old-price">
+                    <dt>房屋原价：</dt>
+                    <dd><div class="cfi-right">
+                        <input type="text" placeholder="请输入房屋原价">
+                        <span class="calculator-form-unit">万元</span>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="second-house-type">
+                    <dt>住宅类型：</dt>
+                    <dd><div class="cfi-right">
+                        <label for="house-type-1"><input type="radio" name="house-type" id="house-type-1" checked>普通住宅</label>
+                        <label for="house-type-2"><input type="radio" name="house-type" id="house-type-2">非普通住宅</label>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="second-house-years">
+                    <dt>房产年限：</dt>
+                    <dd><div class="cfi-right">
+                        <label for="house-limit-1"><input type="radio" name="house-years" id="house-limit-1" checked>2年以内</label>
+                        <label for="house-limit-3"><input type="radio" name="house-years" id="house-limit-3">2-5年</label>
+                        <label for="house-limit-5"><input type="radio" name="house-years" id="house-limit-5">5年以上</label>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="second-house-first">
+                    <dt>买家家庭首套：</dt>
+                    <dd><div class="cfi-right">
+                        <label for="house-first-yes"><input type="radio" name="house-first" id="house-first-yes" checked>首套</label>
+                        <label for="house-first-no"><input type="radio" name="house-first" id="house-first-no">非首套</label>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item" id="second-house-only">
+                    <dt>买家家庭唯一：</dt>
+                    <dd><div class="cfi-right">
+                        <label for="house-only-yes"><input type="radio" name="house-only" id="house-only-yes" checked>唯一</label>
+                        <label for="house-only-no"><input type="radio" name="house-only" id="house-only-no">非唯一</label>
+                    </div></dd>
+                </dl>
+                <dl class="calculator-form-item">
+                    <dd class="btn-wrap"><div class="cfi-right">
+                        <button class="btn-commit" id="tax-commit">开始计算</button>
+                        <button class="btn-reset" id="second-reset">重新填写</button>
+                    </div></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="calculator-result">
+            <h5 class="result-title" id="result-title1">
+                <span>计算结果</span><em>以下结果仅供参考</em>
+            </h5>
+            <h5 class="result-title" id="result-title2" style="display: none;">
+                <span>计算结果</span><em>具体以实际缴纳金额为准</em>
+            </h5>
+            <div class="result-chart" id="e-chart"></div>
+            <div class="result-total" id="result-total">税费合计：<span></span></div>
+            <ul class="clearfix result-table">
+                <li id="house-total">
+                    <em>房款总额：</em>
+                    <span></span>
+                </li>
+                <li id="house-mortgage-capital">
+                    <em>贷款总额：</em>
+                    <span></span>
+                </li>
+                <li id="house-mortgage-total">
+                    <em>还款总额：</em>
+                    <span></span>
+                </li>
+                <li id="house-interest-total">
+                    <em>总利息款：</em>
+                    <span></span>
+                </li>
+                <li id="house-first-payment">
+                    <em>首期付款：</em>
+                    <span></span>
+                </li>
+                <li id="house-mortgage-month">
+                    <em>贷款月数：</em>
+                    <span></span>
+                </li>
+                <li id="house-month-repay">
+                    <em>月均还款：</em>
+                    <span></span>
+                </li>
+                <li id="house-month-cut">
+                    <em>月均递减：</em>
+                    <span></span>
+                </li>
+                <li id="house-deed-tax">
+                    <em>契税：</em>
+                    <span></span>
+                </li>
+                <li id="house-income-tax">
+                    <em>个人所得税：</em>
+                    <span></span>
+                </li>
+                <li id="house-added-tax">
+                    <em>增值税：</em>
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="script/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="script/echarts.min.js"></script>
+<script type="text/javascript" src="script/house-calculator.js"></script>
+</body>
+</html>

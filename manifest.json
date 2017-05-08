@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "House-Loan-Calculator",
+  "version": "0.0.1",
+  "description": "房产计算器,功能包括新房商贷、公积金贷款计算器,二手房买卖税费计算器。",
+  "icons":{"16":"images/icon_16.png","24":"images/icon_24.png","32":"images/icon_32.png","64":"images/icon_64.png","72":"images/icon_72.png","96":"images/icon_96.png","128":"images/icon_128.png"},
+  "browser_action": {
+    "default_icon": "images/icon_24.png" ,
+    "default_title": "House-Loan-Calculator",
+    "default_popup": "index.html"
+  }
+}
