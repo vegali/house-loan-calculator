@@ -10,7 +10,7 @@
 2. 勾选"开发者模式"
 3. 点击"加载已解压的扩展程序..." > 选择文件夹
 
-#### 2.以.crt压缩包安装
+#### 2.以.crt压缩包安装 [点击下载](https://github.com/vegali/house-loan-calculator/down/House-Loan-Calculator.crx)
 1. 打开chrome的扩展程序
 2. 直接拖拽压缩包至浏览器窗口即可
 
